@@ -17,6 +17,7 @@ overture:
     To assemble you run assembler+interpreter.py, it should automatically write the machinecode both to machinecode.out in the same folder and to machinecode.ovt in the logisim folder.
 regi:
     There is a lot going on in the regi python folder 'higher_programs' and 'programma's' have example programs, in high and assembly respectively. (high is a language that gets compiled to assembly, it's based on python).
+    some programs may not work because they were made for older versions of RASM.
     hcompiler.py will compile high.ovt to assembly and write it to assembly.ovt.
     assemblerimport.py will assemble assembly.ovt together with any code you 'import' and it finds in the programs folder.
     It assembles it and should write it to machinecode.out, \Logisim\MachineCode.ovt and \Digital\computer\RomData.hex at the same times.
