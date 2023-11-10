@@ -2,7 +2,7 @@
 
 There some things that maybe wont work on another machine so let me know if something doesn't work.
 
-SIMULATION PROGRAMS:
+SIMULATING PROGRAMS:
 logisim:
     pretty slow but both OVERTURE and Regi are originally made in logisim.
     you should be able to simulate both. OVERTURE is called OVERTURE.circ and an old version of Regi is called 'Logisim/V232bitfloatstack - Copy - Copy.circ' because why would I use good names, I wasn't planning on sharing this.
