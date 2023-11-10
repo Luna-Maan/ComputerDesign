@@ -1,0 +1,40 @@
+import lineplot.ovt
+const points a
+const temp3 b
+const i c
+const pointer d
+
+label point
+copy <input0> points
+jumpNE <input2> f point
+
+copy e pointer
+
+label loop
+add <input0> 0 <pointer>
+inc <pointer> temp3
+add <input1> 0 <temp3>
+jumpNE <input2> <i> loop
+add 1 <i> i
+add <pointer> 2 pointer
+jumpne <i> <points> loop
+
+copy <e> <pointer>
+inc <pointer> pointer
+copy <f> <pointer>
+
+copy e pointer
+label lines
+copyptr <pointer> x0
+inc <pointer> pointer
+copyptr <pointer> y0
+inc <pointer> pointer
+copyptr <pointer> x1
+inc <pointer> pointer
+copyptr <pointer> y1
+dec <pointer> pointer
+call lineplot
+sub <points> 1 points
+fjumpgt <points> 0 lines
+
+exit

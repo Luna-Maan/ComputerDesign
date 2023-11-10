@@ -1,0 +1,55 @@
+output2 = 1
+inttof 40 r
+inttof 2 two
+inttof 1 one
+inttof 4 temp2
+fdiv one temp2 kwart
+fdiv kwart temp2 hexi
+
+for i in range(0,100):
+    inttof i v
+    fdiv v r v
+    fsub v two v
+    for j in range(80,100):
+        inttof j w
+        fdiv w r w
+        fsub w two w
+        inttof 0 x
+        inttof 0 y
+        output2 = 1
+        fsub v kwart temp3
+        fmult temp3 temp3 temp
+        fmult w w temp2
+        fadd temp temp2 temp
+        fadd temp3 temp temp3
+        fmult temp3 temp temp
+        fmult kwart temp2 temp3
+        fjumple temp temp3 skip
+        fadd v one temp
+        fmult temp temp temp
+        fadd temp temp2 temp
+        fjumple temp hexi skip
+        for iter in range(0,1b):
+            temp2 = x
+            fmult x x temp3
+            fmult y y temp4
+            fsub temp3 temp4 temp
+            fadd temp v x
+            fmult two temp2 temp
+            fmult y temp y
+            fadd y w y
+            fadd temp3 temp4 temp3
+            ftoint temp3 temp3
+            jumpge temp3 4 break
+        label skip
+        output = i
+        output1 = j
+        output1 = 100 - j
+        jump end
+        label break
+        output2 = 8003 + iter
+        output = i
+        output1 = j
+        output1 = 100 - j
+        label end
+        

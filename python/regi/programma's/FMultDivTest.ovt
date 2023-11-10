@@ -1,0 +1,34 @@
+const output2 22
+const i 0
+const x 1
+const y 2
+const output1 21
+
+inttof 1 x
+copy 1 i         
+label loop0
+inttof <i> y
+fmult <x> <y> x
+fdiv <x> <y> x
+copy <x> output1
+copy <i> output2
+inc <i> i
+jumplt <i> 10 loop0
+
+inttof 1 x
+copy 1 i
+label loop1
+inttof <i> y
+fdiv <x> <y> x
+copy <x> output1
+copy <i> output2
+inc <i> i
+jumplt <i> 10 loop1
+copy 1 i
+label loop2
+inttof <i> y
+fmult <x> <y> x
+copy <x> output1
+copy <i> output2
+inc <i> i
+jumplt <i> 10 loop2

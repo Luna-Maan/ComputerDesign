@@ -1,0 +1,74 @@
+const z 25
+const adr 0
+const temp 1
+const j 3
+const adr2 4
+const i 5
+const output1 21
+const output0 20
+
+copy 1 25
+copy 1 26
+copy 0 27
+copy 0 28
+copy 0 29
+copy 0 2a
+copy 1 2b
+copy 1 2c
+copy 0 2d
+copy 0 2e
+copy 0 2f
+copy 0 30
+copy 1 31
+copy 1 32
+copy 0 33
+copy 0 34
+copy 0 35
+copy 0 36
+copy 1 37
+copy 1 38
+copy 0 39
+copy 0 3a
+copy 0 3b
+copy 0 3c
+copy 1 3d
+copy 1 3e
+copy 0 3f
+copy 0 40
+copy 0 41
+copy 0 42
+copy 1 43
+copy 1 44
+copy 0 45
+copy 0 46
+copy 0 47
+copy 0 48
+copy 1 49
+copy 1 4a
+copy 1 4b
+copy 1 4c
+copy 1 4d
+copy 0 4e
+
+
+copy f 22
+copy 0 i
+label loop0
+copy 0 j
+label loop1
+add z <j> adr
+mult 6 <i> adr2
+add <adr> <adr2> adr2
+copy <<adr2>> temp
+jumple <temp> 0 loop2
+add <j> 1 output0
+add <i> 1 output1
+jump end2
+label loop2
+label end2
+inc <j> j
+jumplt <j> 6 loop1
+inc <i> i
+jumplt i 7 loop0
+
+exit

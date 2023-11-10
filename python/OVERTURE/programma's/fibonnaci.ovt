@@ -1,0 +1,12 @@
+imme 1
+copy 0 1
+copy 0 2
+
+
+add
+copy 3 7
+copy 2 1
+copy 3 2
+imme 3
+jump
+

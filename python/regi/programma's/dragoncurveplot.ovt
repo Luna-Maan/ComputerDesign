@@ -1,0 +1,110 @@
+const z 25
+const output 20
+const output1 21
+const x 0
+const output2 22
+const temp 1
+const richting 2
+const limit 3
+const pointer 4
+const y 5
+copy 1 25
+copy 1 26
+copy 0 27
+copy 1 28
+copy 1 29
+copy 0 2a
+copy 0 2b
+copy 1 2c
+copy 1 2d
+copy 1 2e
+copy 0 2f
+copy 0 30
+copy 1 31
+copy 0 32
+copy 0 33
+copy 1 34
+copy 1 35
+copy 1 36
+copy 0 37
+copy 1 38
+copy 1 39
+copy 0 3a
+copy 0 3b
+copy 0 3c
+copy 1 3d
+copy 1 3e
+copy 0 3f
+copy 0 40
+copy 1 41
+copy 0 42
+copy 0 43
+
+
+copy 43 limit
+copy 25 pointer
+copy 1f x
+copy 1f y
+copy 0 richting
+copy <x> output
+copy 1 output2
+
+label main
+jumpne <richting> 0 loop0
+add <y> 1 output1
+add <y> 2 output1
+add <y> 3 output1
+add <y> 4 output1
+add <y> 5 output1
+add <y> 5 y
+label loop0
+
+jumpne <richting> 1 loop1
+add <x> 1 output
+copy <y> output1
+add <x> 2 output
+copy <y> output1
+add <x> 3 output
+copy <y> output1
+add <x> 4 output
+copy <y> output1
+add <x> 5 output
+copy <y> output1
+add <x> 5 x
+label loop1
+
+jumpne <richting> 2 loop2
+sub <y> 1 output1
+sub <y> 2 output1
+sub <y> 3 output1
+sub <y> 4 output1
+sub <y> 5 output1
+sub <y> 5 y
+label loop2
+
+jumpne <richting> 3 loop3
+sub <x> 1 output
+copy <y> output1
+sub <x> 2 output
+copy <y> output1
+sub <x> 3 output
+copy <y> output1
+sub <x> 4 output
+copy <y> output1
+sub <x> 5 output
+copy <y> output1
+sub <x> 5 x
+label loop3
+
+copyptr <pointer> temp
+add <pointer> 1 pointer
+
+jumpne <temp> 0 loop4
+add <richting> 1 richting
+jump end4
+label loop4
+sub <richting> 1 richting
+label end4
+and <richting> 3 richting
+
+jumple <pointer> <limit> main

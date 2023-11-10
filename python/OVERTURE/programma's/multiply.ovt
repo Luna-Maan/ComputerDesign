@@ -1,0 +1,34 @@
+const input 7   ;register 7 is
+const output 7  ;input & output
+
+copy input 0    ;first operand (a)
+copy 0 1
+imme 1
+copy 0 2
+sub
+imme eind
+jump =0         ;skip to the end if 0 (a*0=0)
+copy input 0    ;second operand (b)
+copy 0 1
+copy 0 2
+imme 1
+copy 0 4
+imme loop
+
+label loop
+copy 3 5
+add             ;som+=a
+copy 4 2
+copy 1 4
+copy 5 1
+copy 3 5
+sub             ;b=b-1
+copy 4 1
+copy 2 4
+copy 5 2
+jump !=0        ;loop until b=0
+
+label eind
+copy 5 output   ;output som
+copy 1 1
+
