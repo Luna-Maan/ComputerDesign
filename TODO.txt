@@ -1,0 +1,16 @@
+overture:
+    rewrite multiply.ovt
+    test assembly
+    test cpu sim
+    improve docs
+
+regi:
+    test .bmp to text converter
+    test compilation + assembly + running of all higher programs
+    test assembly + running of all RASM programs
+    test emulation of higher programs
+    write an emulator in C++ for machine code
+
+write better documentation / a tutorial
+
+
