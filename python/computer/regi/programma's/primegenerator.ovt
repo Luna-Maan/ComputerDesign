@@ -1,0 +1,71 @@
+const j 1
+const priem 2
+const output0 20
+const temp 3
+const i 5
+const pointer 0
+const carry 23
+const limit 6
+
+add 0 0 0
+
+copy <20> limit
+copy 2 25
+copy 3 26
+copy 27 pointer
+
+copy 5 j
+label loop0
+jumpne 1 1 end0
+copy 1 priem
+copy 1 i
+label loop1
+add 25 <i> temp
+copyptr <temp> temp
+div <j> <temp> 7
+jumpne <carry> 0 loop2
+copy 0 priem
+jump break
+label loop2
+add 25 <i> temp
+copyptr <temp> temp
+mult <temp> <temp> temp
+jumple <temp> <j> loop3
+jump break
+label loop3
+inc <i> i
+jump loop1
+label break
+jumpne <priem> 1 loop4
+copy <j> <pointer>
+add <pointer> 1 pointer
+copy <pointer> 21
+label loop4
+jumpne <pointer> <limit> loop5
+jump end
+label loop5
+add <j> 2 j
+jump loop0
+label end0
+
+label end
+
+copy 25 pointer
+label oo
+copyptr <pointer> 7
+div <7> 0d10000 8
+div <23> 0d1000 9
+div <23> 0d100 a
+div <23> 0d10 b
+copy <23> c
+add <8> 30 20
+add <9> 30 20
+add <a> 30 20
+add <b> 30 20
+add <c> 30 20
+copy 20 20
+
+add <pointer> 1 pointer
+jumpne <pointer> <limit> oo
+
+exit

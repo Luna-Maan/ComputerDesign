@@ -1,0 +1,74 @@
+const x0 0
+const x1 1
+const y0 2
+const y1 3
+const deltax 4
+const deltay 5
+const helling 6
+const waarde 7
+const temp 8
+const inc 9
+const input0 20
+const input1 21
+const input2 22
+const output0 20
+const output1 21
+
+inttof 1 inc
+
+sub <x1> <x0> deltax
+copy <deltax> waarde
+jumpgt <deltax> 0 positiefx
+sub 0 1 waarde
+mult <deltax> <waarde> waarde
+label positiefx
+inttof <deltax> deltax
+
+sub <y1> <y0> deltay
+copy <deltay> temp
+jumpgt <deltay> 0 positiefy
+sub 0 1 temp
+mult <deltay> <temp> temp
+label positiefy
+inttof <deltay> deltay
+
+jumpgt <temp> <waarde> bigdeltay
+fdiv <deltay> <deltax> helling
+inttof <y0> waarde
+inttof <x0> x0
+inttof <x1> x1
+fjumpge <x1> <x0> mainx
+inttof <y1> waarde
+copy <x0> temp
+copy <x1> x0
+copy <temp> x1
+jump mainx
+
+label bigdeltay
+fdiv <deltax> <deltay> helling
+inttof <x0> waarde
+inttof <y0> y0
+inttof <y1> y1
+fjumpge <y1> <y0> mainy
+inttof <x1> waarde
+copy <y0> temp
+copy <y1> y0
+copy <temp> y1
+jump mainy
+
+label mainx
+fround <x0> output0
+fround <waarde> output1
+fadd <waarde> <helling> waarde
+fadd <x0> <inc> x0
+jumple <x0> <x1> mainx
+jump end
+
+label mainy
+fround <waarde> output0
+fround <y0> output1
+fadd <waarde> <helling> waarde
+fadd <y0> <inc> y0
+jumple <y0> <y1> mainy
+
+label end 

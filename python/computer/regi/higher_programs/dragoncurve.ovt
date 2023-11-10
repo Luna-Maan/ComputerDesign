@@ -1,0 +1,82 @@
+z = array[1000](1)
+lengte = 1
+pointer = 25
+iteraties = 9  ;aantal iteraties
+x = ff         ;begin locatie x
+y = ff         ;begin locatie y
+
+for k in range(0,iteraties):     
+    pointer = pointer + 1
+    copy 1 <pointer>
+    for i in range(0,lengte):
+        j = 25 + lengte - i - 1
+        copyptr j waarde
+        if waarde == 0:
+            pointer = pointer + 1
+            copy 1 <pointer>
+        else:
+            pointer = pointer + 1
+            copy 0 <pointer>
+    lengte = 2 * lengte + 1
+
+shl 1 iteraties limit
+limit = limit + 24     
+pointer = 25
+              
+richting = 0
+output = x
+output2 = 1
+
+label main
+if richting == 0:
+    output1 = y + 1
+    output1 = y + 2
+    output1 = y + 3
+    output1 = y + 4
+    output1 = y + 5
+    y = y + 5
+
+if richting == 1:
+    output = x + 1
+    output1 = y
+    output = x + 2
+    output1 = y
+    output = x + 3
+    output1 = y
+    output = x + 4
+    output1 = y
+    output = x + 5
+    output1 = y
+    x = x + 5
+
+if richting == 2:
+    output1 = y - 1
+    output1 = y - 2
+    output1 = y - 3
+    output1 = y - 4
+    output1 = y - 5
+    y = y - 5
+
+if richting == 3:
+    output = x - 1
+    output1 = y
+    output = x - 2
+    output1 = y
+    output = x - 3
+    output1 = y
+    output = x - 4
+    output1 = y
+    output = x - 5
+    output1 = y
+    x = x - 5
+
+copyptr pointer temp
+pointer += 1
+
+if temp == 0:
+    richting += 1
+else:
+    richting -= 1
+richting &= 3
+
+jumple pointer limit main

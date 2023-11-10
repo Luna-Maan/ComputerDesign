@@ -1,0 +1,151 @@
+const input0 20
+const input1 21
+const balx 0
+const temp 1
+const temp2 2
+const output0 20
+const bat1y 3
+const baldx 4
+const baldy 5
+const temp3 6
+const le 7
+const bat0y 8
+const baly 9
+const temp1 a
+const output2 22
+const output1 21
+
+sub 0 1 le
+copy 7 balx
+copy 3 baly
+copy <le> baldx
+
+label begin
+
+jumpne <input0> 3 loop0
+copy 0 output2
+copy 0 output0
+sub <bat0y> 1 output1
+add <bat0y> 1 bat0y
+copy f output2
+copy <bat0y> output1
+label loop0
+
+jumpne <input0> 1 loop1
+copy 0 output2
+copy 0 output0
+copy <bat0y> output1
+sub <bat0y> 1 bat0y
+copy f output2
+sub <bat0y> 1 output1
+label loop1
+
+jumpne <input1> 3 loop2
+copy 0 output2
+copy f output0
+sub <bat1y> 1 output1
+add <bat1y> 1 bat1y
+copy f output2
+copy <bat1y> output1
+label loop2
+
+jumpne <input1> 1 loop3
+copy 0 output2
+copy f output0
+copy <bat1y> output1
+sub <bat1y> 1 bat1y
+copy f output2
+sub <bat1y> 1 output1
+label loop3
+
+copy <balx> temp2
+copy <baly> temp3
+add <balx> <baldx> balx
+and <balx> f balx
+add <baly> <baldy> baly
+
+jumpge <baly> 0 loop4
+sub 0 <baly> baly
+sub 0 <baldy> baldy
+label loop4
+jumple <baly> 7 loop5
+sub <baly> 7 temp
+sub 7 <temp> baly
+sub 0 <baldy> baldy
+label loop5
+
+jumpne <balx> 0 loop6
+copy 0 temp
+and <bat0y> 7 bat0y
+jumpne <baly> <bat0y> loop7
+copy 1 baldx
+sub <baly> <baldy> baly
+jumpgt <baldy> 0 loop8
+add <baldy> 1 baldy
+label loop8
+add <baly> <baldy> baly
+add <balx> 2 balx
+copy 1 temp
+label loop7
+sub <bat0y> 1 temp1
+and <temp1> 7 temp1
+jumpne <baly> <temp1> loop9
+copy 1 baldx
+sub <baly> <baldy> baly
+jumplt <baldy> 0 loop10
+sub <baldy> 1 baldy
+label loop10
+add <baly> <baldy> baly
+add <balx> 2 balx
+copy 1 temp
+label loop9
+jumpne <temp> 0 loop11
+copy 1 baldx
+copy 0 baldy
+copy 8 balx
+copy 4 baly
+label loop11
+label loop6
+
+jumpne <balx> f loop12
+copy 0 temp
+and <bat1y> 7 bat1y
+jumpne <baly> <bat1y> loop13
+copy <le> baldx
+sub <baly> <baldy> baly
+jumpgt <baldy> 0 loop14
+add <baldy> 1 baldy
+label loop14
+add <baly> <baldy> baly
+sub <balx> 2 balx
+copy 1 temp
+label loop13
+sub <bat1y> 1 temp1
+and <temp1> 7 temp1
+jumpne <baly> <temp1> loop15
+copy <le> baldx
+sub <baly> <baldy> baly
+jumplt <baldy> 0 loop16
+sub <baldy> 1 baldy
+label loop16
+add <baly> <baldy> baly
+sub <balx> 2 balx
+copy 1 temp
+label loop15
+jumpne <temp> 0 loop17
+copy <le> baldx
+copy 0 baldy
+copy 7 balx
+copy 3 baly
+label loop17
+label loop12
+
+copy 0 output2
+copy <temp2> output0
+copy <temp3> output1
+
+copy f output2
+copy <balx> output0
+copy <baly> output1
+
+jump begin

@@ -1,0 +1,83 @@
+const x0 0
+const y0 1
+const x1 2
+const y1 3
+const x2 4
+const y2 5
+const t 6
+const dt a
+const eenmint 7
+const pointer 8
+const temp 9
+const temp2 c
+const temp3 d
+const temp4 f
+const temp5 10
+const temp6 11
+const one b
+const two e
+const i 12
+const output 20
+const output2 21
+const input 20
+const input2 21
+const input3 22
+
+inttof 1 one
+inttof 2 two
+
+copy 1 22                  ;zie higher_programs/bezier.ovt voor comments
+label loop
+copy <input> <pointer>
+inc <pointer> temp
+copy <input2> <temp>
+jumpNE <input3> <i> loop
+add 1 <i> i
+add <pointer> 2 pointer
+jumpne <i> 3 loop
+
+copy <x0> output
+copy <y0> output2
+copy <x1> output
+copy <y1> output2
+copy <x2> output
+copy <y2> output2
+inttof <x0> x0
+inttof <y0> y0
+inttof <x1> x1
+inttof <y1> y1
+inttof <x2> x2
+inttof <y2> y2
+
+inttof 0 t
+inttof 1 dt
+inttof 100 temp
+fdiv <dt> <temp> dt
+
+label main
+fsub <one> <t> eenmint
+fmult <eenmint> <eenmint> temp
+fmult <two> <eenmint> temp2
+fmult <temp2> <t> temp2
+fmult <t> <t> temp3
+
+fmult <temp> <x0> temp4
+fmult <temp2> <x1> temp5
+fmult <temp3> <x2> temp6
+fadd <temp4> <temp5> temp5
+fadd <temp5> <temp6> temp6
+ftoint <temp6> output
+
+fmult <temp> <y0> temp4
+fmult <temp2> <y1> temp5
+fmult <temp3> <y2> temp6
+fadd <temp4> <temp5> temp5
+fadd <temp5> <temp6> temp6
+ftoint <temp6> output2
+
+fadd <t> <dt> t
+copy <t> 23
+ftoint <t> temp
+jumplt <temp> 1 main
+
+exit
