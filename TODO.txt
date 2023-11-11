@@ -11,7 +11,14 @@ regi:
     test emulation of higher programs
     write an emulator in C++ for machine code
 
-write better documentation / a tutorial
+docs:
+   explanation for using most tools
+   cpp reference achtige lijst van code snippets
+
+QOL:
+   make the play button in vscode assemble/compile .ovt or .high files and automatically write to rom.hex
+   interface?
+   
 
 LLVM?
 
