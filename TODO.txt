@@ -32,3 +32,5 @@ regi:
 docs:
    explanation for using most tools
    cpp reference achtige lijst van code snippets
+
+MSI package installer?
