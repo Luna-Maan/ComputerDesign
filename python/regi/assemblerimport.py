@@ -1,14 +1,20 @@
 from pickle import TRUE
 import time
 import re
+import os
+import sys
 tijd = time.time()
 
-ass = open(r"python\regi\assembly.ovt", "r")
+print(sys.argv[1])
+
+if len(sys.argv)==1:
+    file_name = os.path.join(__file__, '../assembly.rasm')
+else:
+    file_name = sys.argv[1]
+ass = open(file_name, "r")
 a = ass.read()
 ass.close()
-
 x = a.splitlines()
-#print(x)
 
 check = True
 retreg = 31
@@ -18,8 +24,9 @@ while check:
     check = False
     for i in range(0,len(x)):
         if x[i].startswith("import"):
-            path = r"C:\Users\pvano\OneDrive\Bureaublad\code\Python Scripts\computer\\regi\programma's"
-            path = path + "\\" + x[i][7:]
+            print(x[i][7:])
+            path = os.path.join(__file__, '../programmas')               
+            path = os.path.join(path, x[i][7:])
             if path not in importlist:
                 importlist.append(path)
                 bss = open(path, "r")
@@ -33,9 +40,6 @@ while check:
                 check = True
             else:
                 x.pop(i)
-
-
-#print(x)
 
 x = [i for i in x if i]                     #remove all empty lines
 for i in range(0,len(x)):                   #remove all comments
@@ -657,20 +661,34 @@ for i in range(0,len(x)):
 string = ' '         #combine al instructions
 x = string.join(x)
 
-machine = open(r"python\regi\MachineCode.out", "w")
+if len(sys.argv)==1:
+    file_name = os.path.join(__file__, '../MachineCode.out')
+elif len(sys.argv)==3:
+    name = "../" + sys.argv[2]
+    print(name)
+    input()
+    file_name = os.path.join(__file__, name)
+    print(file_name)
+else:
+    file_name = os.path.join(sys.argv[1], '../MachineCode.out')
+
+if os.path.exists(file_name):
+    machine = open(file_name, "w")
+else:
+    machine =  open(file_name, "x")
+
 machine.write(x)
 machine.close()
-
-machine = open(r"Logisim\MachineCode.ovt", "w")
+file_name = os.path.join(__file__, '../../../Logisim/MachineCode.ovt')
+machine = open(file_name, "w")
 machine.write(x)
 machine.close()
-
 x = x.replace(" ","\r\n")
 x = "v2.0 raw\r\n" + x
-machine = open(r"Digital\computer\RomData.hex", "w")
+file_name = os.path.join(__file__, '../../../Digital/computer/RomData.hex')
+machine = open(file_name, "w")
 machine.write(x)
 machine.close()
 #print(x)
 print(time.time()-tijd)
-
 print("assembled")

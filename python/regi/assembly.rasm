@@ -1,0 +1,21 @@
+const verschil 0
+const output 20
+const sumofsquares 1
+const i 2
+const squareofsum 3
+const temp0 4
+copy 0 sumofsquares
+copy 0 squareofsum
+copy 1 i
+label loop0
+mult <i> <i> temp0
+add <temp0> <sumofsquares> sumofsquares
+add <i> <squareofsum> squareofsum
+inc <i> i
+jumplt <i> 65 loop0
+
+mult <squareofsum> <squareofsum> squareofsum
+
+sub <squareofsum> <sumofsquares> verschil
+copy <verschil> output
+EXIT

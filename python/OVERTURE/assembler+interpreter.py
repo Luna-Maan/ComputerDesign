@@ -1,6 +1,12 @@
 import re
+import os
+import sys
 
-ass = open(r"assembly.ovt", "r")
+if len(sys.argv)==1:
+    file_name = os.path.join(__file__, '../assembly.ovt')
+else:
+    file_name = sys.argv[1]
+ass = open(file_name, "r")
 a = ass.read()
 ass.close()
 

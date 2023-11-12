@@ -1,0 +1,11 @@
+sumofsquares = 0
+squareofsum = 0
+for i in range(1,65):
+    sumofsquares = i * i + sumofsquares
+    squareofsum = i + squareofsum
+
+squareofsum = squareofsum * squareofsum
+
+verschil = squareofsum - sumofsquares
+output = verschil
+EXIT

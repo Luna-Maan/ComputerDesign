@@ -1,4 +1,5 @@
-
+import sys
+import os
 import string
 from tokenize import ContStr
 
@@ -218,8 +219,11 @@ def shuntingyard(a):
                 n -= 3
     return instructions
 
-
-ass = open(r"python\regi\high.ovt", "r")
+if len(sys.argv)==1:
+    file_name = os.path.join(__file__, '../high.high')
+else:
+    file_name = sys.argv[1]
+ass = open(file_name, "r")
 a = ass.read()
 ass.close()
 
@@ -626,7 +630,22 @@ x = array_consts + constants + x
 
 x = '\n'.join(x)
 
-machine = open(r"python\regi\high.ovt", "w")
+if len(sys.argv)==1:
+    file_name = os.path.join(__file__, '../assembly.rasm')
+elif len(sys.argv)==3:
+    name = "../" + sys.argv[2]
+    print(name)
+    input()
+    file_name = os.path.join(__file__, name)
+    print(file_name)
+else:
+    file_name = os.path.join(sys.argv[1], '../assembly.rasm')
+
+if os.path.exists(file_name):
+    machine = open(file_name, "w")
+else:
+    machine =  open(file_name, "x")
+machine = open(file_name, "w")
 machine.write(x)
 machine.close()
 

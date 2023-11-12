@@ -1,6 +1,6 @@
 import re
 
-ass = open(r"high.ovt", "r")
+ass = open(r"high.high", "r")
 a = ass.read()
 ass.close()
 

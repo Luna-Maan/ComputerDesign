@@ -35,6 +35,13 @@ def output1(b):
         plt.imshow(a)
         plt.show(block = False)
         plt.pause(0.01)
+sumofsquares = 0
+squareofsum = 0
+for i in range(1,65):
+    sumofsquares = i * i + sumofsquares
+    squareofsum = i + squareofsum
 
-for i in range(0,10):
-	output1(  i )
+squareofsum = squareofsum * squareofsum
+
+verschil = squareofsum - sumofsquares
+output(  verschil )
