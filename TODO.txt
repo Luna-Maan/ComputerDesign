@@ -1,17 +1,20 @@
 ```TO-DO:
-- add copilot to vscode
 - rename vscode extension
-- make python accept the {currrent file} argument
-- make assembler output the machine code in a new file in the working directory and not in the computerdesign folder
+- make overture accept the {currrent file} argument
 - automatisch toevoegen van assemblerimport.py aan PATH, en sla op wat de path is zodat het te verwijderen is zelfs als je de folder verplaatst.
-- DONE: make the path to the assembler dynamic (with PATH?)
-- NEW: change hcompiler to also work from any dir
 - add a run button to the editor
-- add different commands for different files (.ovt, .rasm and .high)
+- rename all file extensions and test programs
+- combine the three computer.dig files into 1
 ```
 note: f5 while in 'extension.ts' to open extension developer window.
 
-syntax highlighting
+```
+LATER TO-DO:
+- Syntax highlighting (steal a little bit from python vscode files and a little bit from editor.py)
+- ast rewrite van compiler+assembler
+- LLVM support
+- c++ regi emulator
+```
 
 overture:
     rewrite multiply.ovt
@@ -29,12 +32,3 @@ regi:
 docs:
    explanation for using most tools
    cpp reference achtige lijst van code snippets
-
-QOL:
-   make the play button in vscode assemble/compile .ovt or .high files and automatically write to rom.hex
-   interface?
-   
-
-LLVM?
-
-
