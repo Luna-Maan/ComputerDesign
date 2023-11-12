@@ -2,6 +2,9 @@
 
 There some things that maybe wont work on another machine so let me know if something doesn't work.
 
+INSTALLING THE VSCODE EXTENSION:
+    open ComputerDesign in vscode, right-click 'extensionOVT-0.0.1.vsix' in the explorer and choose the option at the bottom 'install extension VSIX' and after that add SOMEPATH\ComputerDesign\python\regi to PATH. from now on the shortcut 'ctrl+f7' or 'cmd+f7' will compile a .high file and assemble a .rasm file as long as youre cursor is inside the file while doing so (because the texteditor must be active).
+
 SIMULATING PROGRAMS:
 logisim:
     pretty slow but both OVERTURE and Regi are originally made in logisim.
