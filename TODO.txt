@@ -1,3 +1,18 @@
+```TO-DO:
+- add copilot to vscode
+- rename vscode extension
+- make python accept the {currrent file} argument
+- make assembler output the machine code in a new file in the working directory and not in the computerdesign folder
+- automatisch toevoegen van assemblerimport.py aan PATH, en sla op wat de path is zodat het te verwijderen is zelfs als je de folder verplaatst.
+- DONE: make the path to the assembler dynamic (with PATH?)
+- NEW: change hcompiler to also work from any dir
+- add a run button to the editor
+- add different commands for different files (.ovt, .rasm and .high)
+```
+note: f5 while in 'extension.ts' to open extension developer window.
+
+syntax highlighting
+
 overture:
     rewrite multiply.ovt
     test assembly
